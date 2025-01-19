@@ -1,0 +1,2 @@
+AUTH_DRIZZLE_URL=postgresql://postgres:postgres@127.0.0.1:5432/main?sslmode=disable
+ENVIRONMENT=LOCAL
