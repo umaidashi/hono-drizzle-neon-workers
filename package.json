@@ -2,12 +2,14 @@
   "name": "hono-drizzle-neon-workers",
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify"
+		"deploy": "wrangler deploy --minify",
+		"check": "biome check --write ."
   },
   "dependencies": {
     "hono": "^4.6.17"
   },
   "devDependencies": {
+		"@biomejs/biome": "1.9.4",
     "@cloudflare/workers-types": "^4.20250109.0",
     "wrangler": "^3.101.0"
   }
