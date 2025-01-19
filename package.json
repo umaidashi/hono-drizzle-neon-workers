@@ -1,20 +1,22 @@
 {
-  "name": "hono-drizzle-neon-workers",
-  "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify",
-    "check": "biome check --write ."
-  },
-  "dependencies": {
-    "@neondatabase/serverless": "^0.10.4",
-    "drizzle-orm": "^0.38.4",
-    "hono": "^4.6.17"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@cloudflare/workers-types": "^4.20250109.0",
-    "drizzle-kit": "^0.30.2",
-    "postgres": "^3.4.5",
-    "wrangler": "^3.101.0"
-  }
+	"name": "hono-drizzle-neon-workers",
+	"scripts": {
+		"dev": "wrangler dev",
+		"deploy": "wrangler deploy --minify",
+		"check": "biome check --write .",
+		"db:generate": "drizzle-kit generate",
+		"db:migrate": "drizzle-kit migrate"
+	},
+	"dependencies": {
+		"@neondatabase/serverless": "^0.10.4",
+		"dotenv": "^16.4.7",
+		"drizzle-orm": "^0.38.4",
+		"hono": "^4.6.17"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@cloudflare/workers-types": "^4.20250109.0",
+		"drizzle-kit": "^0.30.2",
+		"wrangler": "^3.101.0"
+	}
 }
