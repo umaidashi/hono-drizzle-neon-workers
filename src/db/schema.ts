@@ -1,4 +1,3 @@
-import type { InferModel } from "drizzle-orm";
 import {
 	index,
 	pgTable,
@@ -8,15 +7,15 @@ import {
 	varchar,
 } from "drizzle-orm/pg-core";
 
-export type User = InferModel<typeof users, "select">;
+export type User = typeof usersTable.$inferSelect;
 
-export const users = pgTable(
+export const usersTable = pgTable(
 	"users",
 	{
-		id: uuid("id").defaultRandom().primaryKey().notNull(),
-		fullName: varchar("full_name").notNull(),
-		email: varchar("email").notNull(),
-		password: varchar("password").notNull(),
+		id: uuid("id").defaultRandom().primaryKey(),
+		fullName: varchar("full_name", { length: 255 }).notNull(),
+		email: varchar("email", { length: 255 }).notNull(),
+		password: varchar("password", { length: 255 }).notNull(),
 		createdAt: timestamp("created_at").defaultNow().notNull(),
 		updatedAt: timestamp("updated_at").defaultNow().notNull(),
 	},
