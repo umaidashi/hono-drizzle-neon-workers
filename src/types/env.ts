@@ -1,13 +1,14 @@
-import type { NeonDatabase } from "drizzle-orm/neon-serverless";
+import type { NeonHttpDatabase } from "drizzle-orm/neon-http";
 // import type { User } from "../db/schema";
 
 type Bindings = {
 	AUTH_DRIZZLE_URL: string;
+	ENVIRONMENT: string;
 	// JWT_SECRET_KET: string;
 };
 
 type Variables = {
-	db: NeonDatabase<Record<string, never>>;
+	db: NeonHttpDatabase<Record<string, never>>;
 	// user: User;
 };
 
